@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:55bd1d5c38a2a85459654de9f2f73df8:c1a0396956434483eb88a38f2d82b5f7:27b57f72114b6905258bacf1feaca0b6$ -->
+<TextureAtlas imagePath="guns4.png" width="4000" height="4050">
+    <SubTexture name="guns0001" x="0" y="0" width="800" height="450"/>
+    <SubTexture name="guns0002" x="800" y="0" width="800" height="450"/>
+    <SubTexture name="guns0003" x="1600" y="0" width="800" height="450"/>
+    <SubTexture name="guns0004" x="2400" y="0" width="800" height="450"/>
+    <SubTexture name="guns0005" x="3200" y="0" width="800" height="450"/>
+    <SubTexture name="guns0006" x="0" y="450" width="800" height="450"/>
+    <SubTexture name="guns0007" x="800" y="450" width="800" height="450"/>
+    <SubTexture name="guns0008" x="1600" y="450" width="800" height="450"/>
+    <SubTexture name="guns0009" x="2400" y="450" width="800" height="450"/>
+    <SubTexture name="guns0010" x="3200" y="450" width="800" height="450"/>
+    <SubTexture name="guns0011" x="0" y="900" width="800" height="450"/>
+    <SubTexture name="guns0012" x="800" y="900" width="800" height="450"/>
+    <SubTexture name="guns0013" x="1600" y="900" width="800" height="450"/>
+    <SubTexture name="guns0014" x="2400" y="900" width="800" height="450"/>
+    <SubTexture name="guns0015" x="3200" y="900" width="800" height="450"/>
+    <SubTexture name="guns0016" x="0" y="1350" width="800" height="450"/>
+    <SubTexture name="guns0017" x="800" y="1350" width="800" height="450"/>
+    <SubTexture name="guns0018" x="1600" y="1350" width="800" height="450"/>
+    <SubTexture name="guns0019" x="2400" y="1350" width="800" height="450"/>
+    <SubTexture name="guns0020" x="3200" y="1350" width="800" height="450"/>
+    <SubTexture name="guns0021" x="0" y="1800" width="800" height="450"/>
+    <SubTexture name="guns0022" x="800" y="1800" width="800" height="450"/>
+    <SubTexture name="guns0023" x="1600" y="1800" width="800" height="450"/>
+    <SubTexture name="guns0024" x="2400" y="1800" width="800" height="450"/>
+    <SubTexture name="guns0025" x="3200" y="1800" width="800" height="450"/>
+    <SubTexture name="guns0026" x="0" y="2250" width="800" height="450"/>
+    <SubTexture name="guns0027" x="800" y="2250" width="800" height="450"/>
+    <SubTexture name="guns0028" x="1600" y="2250" width="800" height="450"/>
+    <SubTexture name="guns0029" x="2400" y="2250" width="800" height="450"/>
+    <SubTexture name="guns0030" x="3200" y="2250" width="800" height="450"/>
+    <SubTexture name="guns0031" x="0" y="2700" width="800" height="450"/>
+    <SubTexture name="guns0032" x="800" y="2700" width="800" height="450"/>
+    <SubTexture name="guns0033" x="1600" y="2700" width="800" height="450"/>
+    <SubTexture name="guns0034" x="2400" y="2700" width="800" height="450"/>
+    <SubTexture name="guns0035" x="3200" y="2700" width="800" height="450"/>
+    <SubTexture name="guns0036" x="0" y="3150" width="800" height="450"/>
+    <SubTexture name="guns0037" x="800" y="3150" width="800" height="450"/>
+    <SubTexture name="guns0038" x="1600" y="3150" width="800" height="450"/>
+    <SubTexture name="guns0039" x="2400" y="3150" width="800" height="450"/>
+    <SubTexture name="guns0040" x="3200" y="3150" width="800" height="450"/>
+    <SubTexture name="guns0041" x="0" y="3600" width="800" height="450"/>
+    <SubTexture name="guns0042" x="800" y="3600" width="800" height="450"/>
+    <SubTexture name="guns0043" x="1600" y="3600" width="800" height="450"/>
+    <SubTexture name="guns0044" x="2400" y="3600" width="800" height="450"/>
+</TextureAtlas>

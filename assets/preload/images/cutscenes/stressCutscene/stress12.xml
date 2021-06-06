@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker https://www.codeandweb.com/texturepacker -->
+<!-- $TexturePacker:SmartUpdate:cf58ecc90257ff0f1f55aec41b38b0b6:19fe930afabd46a70e52d691fe2f7e8a:b33defe8df6bab772b1022d62d7dea46$ -->
+<TextureAtlas imagePath="stress12.png" width="8000" height="2250">
+    <SubTexture name="stress0001" x="0" y="0" width="800" height="450"/>
+    <SubTexture name="stress0002" x="800" y="0" width="800" height="450"/>
+    <SubTexture name="stress0003" x="1600" y="0" width="800" height="450"/>
+    <SubTexture name="stress0004" x="2400" y="0" width="800" height="450"/>
+    <SubTexture name="stress0005" x="3200" y="0" width="800" height="450"/>
+    <SubTexture name="stress0006" x="4000" y="0" width="800" height="450"/>
+    <SubTexture name="stress0007" x="4800" y="0" width="800" height="450"/>
+    <SubTexture name="stress0008" x="5600" y="0" width="800" height="450"/>
+    <SubTexture name="stress0009" x="6400" y="0" width="800" height="450"/>
+    <SubTexture name="stress0010" x="7200" y="0" width="800" height="450"/>
+    <SubTexture name="stress0011" x="0" y="450" width="800" height="450"/>
+    <SubTexture name="stress0012" x="800" y="450" width="800" height="450"/>
+    <SubTexture name="stress0013" x="1600" y="450" width="800" height="450"/>
+    <SubTexture name="stress0014" x="2400" y="450" width="800" height="450"/>
+    <SubTexture name="stress0015" x="3200" y="450" width="800" height="450"/>
+    <SubTexture name="stress0016" x="4000" y="450" width="800" height="450"/>
+    <SubTexture name="stress0017" x="4800" y="450" width="800" height="450"/>
+    <SubTexture name="stress0018" x="5600" y="450" width="800" height="450"/>
+    <SubTexture name="stress0019" x="6400" y="450" width="800" height="450"/>
+    <SubTexture name="stress0020" x="7200" y="450" width="800" height="450"/>
+    <SubTexture name="stress0021" x="0" y="900" width="800" height="450"/>
+    <SubTexture name="stress0022" x="800" y="900" width="800" height="450"/>
+    <SubTexture name="stress0023" x="1600" y="900" width="800" height="450"/>
+    <SubTexture name="stress0024" x="2400" y="900" width="800" height="450"/>
+    <SubTexture name="stress0025" x="3200" y="900" width="800" height="450"/>
+    <SubTexture name="stress0026" x="4000" y="900" width="800" height="450"/>
+    <SubTexture name="stress0027" x="4800" y="900" width="800" height="450"/>
+    <SubTexture name="stress0028" x="5600" y="900" width="800" height="450"/>
+    <SubTexture name="stress0029" x="6400" y="900" width="800" height="450"/>
+    <SubTexture name="stress0030" x="7200" y="900" width="800" height="450"/>
+    <SubTexture name="stress0031" x="0" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0032" x="800" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0033" x="1600" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0034" x="2400" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0035" x="3200" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0036" x="4000" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0037" x="4800" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0038" x="5600" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0039" x="6400" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0040" x="7200" y="1350" width="800" height="450"/>
+    <SubTexture name="stress0041" x="0" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0042" x="800" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0043" x="1600" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0044" x="2400" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0045" x="3200" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0046" x="4000" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0047" x="4800" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0048" x="5600" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0049" x="6400" y="1800" width="800" height="450"/>
+    <SubTexture name="stress0050" x="7200" y="1800" width="800" height="450"/>
+</TextureAtlas>

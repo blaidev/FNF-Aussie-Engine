@@ -1523,9 +1523,9 @@ class PlayState extends MusicBeatState
 				case 'thorns':
 					schoolIntro(doof);
 				case 'ugh':
-					ughIntro();
+					ughAndGunsIntro();
 				case 'guns':
-					gunsIntro();
+					ughAndGunsIntro();
 				case 'stress':
 					stressIntro();
 				default:
@@ -1549,23 +1549,23 @@ class PlayState extends MusicBeatState
 	}
 
 	
-	function ughIntro(){
-
+	function ughAndGunsIntro()
+	{
 		healthBarBG.visible = false;
 		
 		healthBar.visible = false;
 		iconP1.visible = false;
 		iconP2.visible = false;
 		scoreTxt.visible = false;
-
 		inCutscene = true;
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 		black.scrollFactor.set();
 		add(black);
+
 		var part1:FlxSprite = new FlxSprite(-100, -100);
 		part1.antialiasing = true;
-		part1.frames = Paths.getSparrowAtlas('ughCutscenePart1', 'preload');
-		part1.animation.addByPrefix('video', 'ugh', 12, false);
+		part1.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '1', 'preload');
+		part1.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
 		part1.setGraphicSize(Std.int(part1.width * 1.8));
 		part1.scrollFactor.set();
 		part1.updateHitbox();
@@ -1575,120 +1575,8 @@ class PlayState extends MusicBeatState
 
 		var part2:FlxSprite = new FlxSprite(-100, -100);
 		part2.antialiasing = true;
-		part2.frames = Paths.getSparrowAtlas('ughCutscenePart2', 'preload');
-		part2.animation.addByPrefix('video', 'ugh', 12, false);
-		part2.setGraphicSize(Std.int(part2.width * 1.8));
-		part2.scrollFactor.set();
-		part2.updateHitbox();
-		part2.screenCenter();
-		
-		FlxG.sound.play(Paths.soundOGG('ughpart1', 'preload'), 1, false, null, true, function()
-							{
-								
-								remove(part1);
-								add(part2);
-								part2.animation.play('video');
-								FlxG.sound.play(Paths.soundOGG('ughpart2', 'preload'), 1, false, null, true, function()
-									{
-										healthBarBG.visible = true;
-										
-										healthBar.visible = true;
-										iconP1.visible = true;
-										iconP2.visible = true;
-										scoreTxt.visible = true;
-										remove(black);
-										remove(part2);
-										startCountdown();
-										
-			
-									});
-								
-			
-							});
-    }
-
-    function gunsIntro(){
-    	healthBarBG.visible = false;
-		
-		healthBar.visible = false;
-		iconP1.visible = false;
-		iconP2.visible = false;
-		scoreTxt.visible = false;
-		inCutscene = true;
-		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-		black.scrollFactor.set();
-		add(black);
-		var part1:FlxSprite = new FlxSprite(-100, -100);
-		part1.antialiasing = true;
-		part1.frames = Paths.getSparrowAtlas('gunsCutscenePart1', 'preload');
-		part1.animation.addByPrefix('video', 'guns', 12, false);
-		part1.setGraphicSize(Std.int(part1.width * 1.8));
-		part1.scrollFactor.set();
-		part1.updateHitbox();
-		part1.screenCenter();
-		add(part1);
-		part1.animation.play('video');
-
-		var part2:FlxSprite = new FlxSprite(-100, -100);
-		part2.antialiasing = true;
-		part2.frames = Paths.getSparrowAtlas('gunsCutscenePart2', 'preload');
-		part2.animation.addByPrefix('video', 'guns', 12, false);
-		part2.setGraphicSize(Std.int(part2.width * 1.8));
-		part2.scrollFactor.set();
-		part2.updateHitbox();
-		part2.screenCenter();
-		
-		FlxG.sound.play(Paths.soundOGG('gunspart1', 'preload'), 1, false, null, true, function()
-							{
-								
-								remove(part1);
-								add(part2);
-								part2.animation.play('video');
-								FlxG.sound.play(Paths.soundOGG('gunspart2', 'preload'), 1, false, null, true, function()
-									{
-										healthBarBG.visible = true;
-									
-										healthBar.visible = true;
-										iconP1.visible = true;
-										iconP2.visible = true;
-										scoreTxt.visible = true;
-										remove(black);
-										remove(part2);
-										startCountdown();
-
-			
-									});
-								
-			
-							});
-    }
-
-    function stressIntro(){
-    	healthBarBG.visible = false;
-	
-		healthBar.visible = false;
-		iconP1.visible = false;
-		iconP2.visible = false;
-		scoreTxt.visible = false;
-		inCutscene = true;
-		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-		black.scrollFactor.set();
-		add(black);
-		var part1:FlxSprite = new FlxSprite(-100, -100);
-		part1.antialiasing = true;
-		part1.frames = Paths.getSparrowAtlas('stressCutscenePart1', 'preload');
-		part1.animation.addByPrefix('video', 'stress', 12, false);
-		part1.setGraphicSize(Std.int(part1.width * 1.8));
-		part1.scrollFactor.set();
-		part1.updateHitbox();
-		part1.screenCenter();
-		add(part1);
-		part1.animation.play('video');
-
-		var part2:FlxSprite = new FlxSprite(-100, -100);
-		part2.antialiasing = true;
-		part2.frames = Paths.getSparrowAtlas('stressCutscenePart2', 'preload');
-		part2.animation.addByPrefix('video', 'stress', 12, false);
+		part2.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '2', 'preload');
+		part2.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
 		part2.setGraphicSize(Std.int(part2.width * 1.8));
 		part2.scrollFactor.set();
 		part2.updateHitbox();
@@ -1696,8 +1584,8 @@ class PlayState extends MusicBeatState
 
 		var part3:FlxSprite = new FlxSprite(-100, -100);
 		part3.antialiasing = true;
-		part3.frames = Paths.getSparrowAtlas('stressCutscenePart3', 'preload');
-		part3.animation.addByPrefix('video', 'stress', 12, false);
+		part3.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '3', 'preload');
+		part3.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
 		part3.setGraphicSize(Std.int(part3.width * 1.8));
 		part3.scrollFactor.set();
 		part3.updateHitbox();
@@ -1705,8 +1593,100 @@ class PlayState extends MusicBeatState
 
 		var part4:FlxSprite = new FlxSprite(-100, -100);
 		part4.antialiasing = true;
-		part4.frames = Paths.getSparrowAtlas('stressCutscenePart4', 'preload');
-		part4.animation.addByPrefix('video', 'stress', 12, false);
+		part4.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '4', 'preload');
+		part4.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part4.setGraphicSize(Std.int(part4.width * 1.8));
+		part4.scrollFactor.set();
+		part4.updateHitbox();
+		part4.screenCenter();
+		
+		FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '1', 'preload'), 1, false, null, true, function()
+							{
+								
+								remove(part1);
+								add(part2);
+								part2.animation.play('video');
+								FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '2', 'preload'), 1, false, null, true, function()
+									{
+										remove(part2);
+										add(part3);
+										part3.animation.play('video');
+										FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '3', 'preload'), 1, false, null, true, function()
+											{
+												remove(part3);
+												add(part4);
+												part4.animation.play('video');
+												FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '4', 'preload'), 1, false, null, true, function()
+													{
+														healthBarBG.visible = true;
+									
+														healthBar.visible = true;
+														iconP1.visible = true;
+														iconP2.visible = true;
+														scoreTxt.visible = true;
+														remove(black);
+														remove(part4);
+														startCountdown();
+
+			
+													});
+								
+			
+											});
+			
+									});
+								
+			
+							});
+		
+    }
+
+    
+    function stressIntro(){
+    	healthBarBG.visible = false;
+		
+		healthBar.visible = false;
+		iconP1.visible = false;
+		iconP2.visible = false;
+		scoreTxt.visible = false;
+		inCutscene = true;
+		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
+		black.scrollFactor.set();
+		add(black);
+
+		var part1:FlxSprite = new FlxSprite(-100, -100);
+		part1.antialiasing = true;
+		part1.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '1', 'preload');
+		part1.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part1.setGraphicSize(Std.int(part1.width * 1.8));
+		part1.scrollFactor.set();
+		part1.updateHitbox();
+		part1.screenCenter();
+		add(part1);
+		part1.animation.play('video');
+
+		var part2:FlxSprite = new FlxSprite(-100, -100);
+		part2.antialiasing = true;
+		part2.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '2', 'preload');
+		part2.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part2.setGraphicSize(Std.int(part2.width * 1.8));
+		part2.scrollFactor.set();
+		part2.updateHitbox();
+		part2.screenCenter();
+
+		var part3:FlxSprite = new FlxSprite(-100, -100);
+		part3.antialiasing = true;
+		part3.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '3', 'preload');
+		part3.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part3.setGraphicSize(Std.int(part3.width * 1.8));
+		part3.scrollFactor.set();
+		part3.updateHitbox();
+		part3.screenCenter();
+
+		var part4:FlxSprite = new FlxSprite(-100, -100);
+		part4.antialiasing = true;
+		part4.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '4', 'preload');
+		part4.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
 		part4.setGraphicSize(Std.int(part4.width * 1.8));
 		part4.scrollFactor.set();
 		part4.updateHitbox();
@@ -1714,8 +1694,8 @@ class PlayState extends MusicBeatState
 
 		var part5:FlxSprite = new FlxSprite(-100, -100);
 		part5.antialiasing = true;
-		part5.frames = Paths.getSparrowAtlas('stressCutscenePart5', 'preload');
-		part5.animation.addByPrefix('video', 'stress', 12, false);
+		part5.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '5', 'preload');
+		part5.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
 		part5.setGraphicSize(Std.int(part5.width * 1.8));
 		part5.scrollFactor.set();
 		part5.updateHitbox();
@@ -1723,59 +1703,166 @@ class PlayState extends MusicBeatState
 
 		var part6:FlxSprite = new FlxSprite(-100, -100);
 		part6.antialiasing = true;
-		part6.frames = Paths.getSparrowAtlas('stressCutscenePart6', 'preload');
-		part6.animation.addByPrefix('video', 'stress', 12, false);
+		part6.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '6', 'preload');
+		part6.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
 		part6.setGraphicSize(Std.int(part6.width * 1.8));
 		part6.scrollFactor.set();
 		part6.updateHitbox();
 		part6.screenCenter();
+
+		var part7:FlxSprite = new FlxSprite(-100, -100);
+		part7.antialiasing = true;
+		part7.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '7', 'preload');
+		part7.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part7.setGraphicSize(Std.int(part7.width * 1.8));
+		part7.scrollFactor.set();
+		part7.updateHitbox();
+		part7.screenCenter();
+
+		var part8:FlxSprite = new FlxSprite(-100, -100);
+		part8.antialiasing = true;
+		part8.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '8', 'preload');
+		part8.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part8.setGraphicSize(Std.int(part8.width * 1.8));
+		part8.scrollFactor.set();
+		part8.updateHitbox();
+		part8.screenCenter();
+
+		var part9:FlxSprite = new FlxSprite(-100, -100);
+		part9.antialiasing = true;
+		part9.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '9', 'preload');
+		part9.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part9.setGraphicSize(Std.int(part9.width * 1.8));
+		part9.scrollFactor.set();
+		part9.updateHitbox();
+		part9.screenCenter();
+
+		var part10:FlxSprite = new FlxSprite(-100, -100);
+		part10.antialiasing = true;
+		part10.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '10', 'preload');
+		part10.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part10.setGraphicSize(Std.int(part10.width * 1.8));
+		part10.scrollFactor.set();
+		part10.updateHitbox();
+		part10.screenCenter();
+
+		var part11:FlxSprite = new FlxSprite(-100, -100);
+		part11.antialiasing = true;
+		part11.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '11', 'preload');
+		part11.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part11.setGraphicSize(Std.int(part11.width * 1.8));
+		part11.scrollFactor.set();
+		part11.updateHitbox();
+		part11.screenCenter();
+
+		var part12:FlxSprite = new FlxSprite(-100, -100);
+		part12.antialiasing = true;
+		part12.frames = Paths.getSparrowAtlas('cutscenes/' + SONG.song.toLowerCase() + 'Cutscene/' + SONG.song.toLowerCase() + '12', 'preload');
+		part12.animation.addByPrefix('video', SONG.song.toLowerCase(), 24, false);
+		part12.setGraphicSize(Std.int(part12.width * 1.8));
+		part12.scrollFactor.set();
+		part12.updateHitbox();
+		part12.screenCenter();
 		
-		FlxG.sound.play(Paths.soundOGG('stresspart1', 'preload'), 1, false, null, true, function()
+		FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '1', 'preload'), 1, false, null, true, function()
 							{
 								
 								remove(part1);
 								add(part2);
 								part2.animation.play('video');
-								FlxG.sound.play(Paths.soundOGG('stresspart2', 'preload'), 1, false, null, true, function()
+								FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '2', 'preload'), 1, false, null, true, function()
 									{
 										remove(part2);
 										add(part3);
 										part3.animation.play('video');
-										FlxG.sound.play(Paths.soundOGG('stresspart3', 'preload'), 1, false, null, true, function()
+										FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '3', 'preload'), 1, false, null, true, function()
 											{
-												
 												remove(part3);
 												add(part4);
 												part4.animation.play('video');
-												FlxG.sound.play(Paths.soundOGG('stresspart4', 'preload'), 1, false, null, true, function()
+												FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '4', 'preload'), 1, false, null, true, function()
 													{
-														
 														remove(part4);
 														add(part5);
 														part5.animation.play('video');
-														FlxG.sound.play(Paths.soundOGG('stresspart5', 'preload'), 1, false, null, true, function()
+														FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '5', 'preload'), 1, false, null, true, function()
 															{
-																
 																remove(part5);
 																add(part6);
 																part6.animation.play('video');
-																FlxG.sound.play(Paths.soundOGG('stresspart6', 'preload'), 1, false, null, true, function()
+																FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '6', 'preload'), 1, false, null, true, function()
+																	{
+																		remove(part6);
+								add(part7);
+								part7.animation.play('video');
+																		FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '7', 'preload'), 1, false, null, true, function()
+							{
+								
+								remove(part7);
+								add(part8);
+								part8.animation.play('video');
+								FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '8', 'preload'), 1, false, null, true, function()
+									{
+										remove(part8);
+										add(part9);
+										part9.animation.play('video');
+										FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '9', 'preload'), 1, false, null, true, function()
+											{
+												remove(part9);
+												add(part10);
+												part10.animation.play('video');
+												FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '10', 'preload'), 1, false, null, true, function()
+													{
+														remove(part10);
+														add(part11);
+														part11.animation.play('video');
+														FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '11', 'preload'), 1, false, null, true, function()
+															{
+																remove(part11);
+																add(part12);
+																part12.animation.play('video');
+																FlxG.sound.play(Paths.soundOGG('cutscenes/' + SONG.song.toLowerCase() + '/' + SONG.song.toLowerCase() + '12', 'preload'), 1, false, null, true, function()
 																	{
 																		healthBarBG.visible = true;
-																		
+									
 																		healthBar.visible = true;
 																		iconP1.visible = true;
 																		iconP2.visible = true;
 																		scoreTxt.visible = true;
 																		remove(black);
-																		remove(part6);
+																		remove(part12);
 																		startCountdown();
-																		
+
+			
 																	});
+								
+			
 															});
+
+			
 													});
+								
+			
 											});
-										
+			
+									});
+								
+			
+							});
+		
+
+			
+																	});
+								
+			
+															});
+
+			
+													});
+								
+			
+											});
+			
 									});
 								
 			
@@ -3305,10 +3392,13 @@ class PlayState extends MusicBeatState
 					daNote.destroy();
 				}
 
-				// WIP interpolation shit? Need to fix the pause issue
-				// daNote.y = (strumLine.y - (songTime - daNote.strumTime) * (0.45 * PlayState.SONG.speed));
+				if (FlxG.save.data.downscroll)
+						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (-0.45 * SONG.speed));
+					else
+						daNote.y = (strumLine.y - (Conductor.songPosition - daNote.strumTime) * (0.45 * SONG.speed));
 
-				if (daNote.y < -daNote.height)
+
+				if ((daNote.y < -daNote.height && !FlxG.save.data.downscroll || daNote.y >= strumLine.y + 106 && FlxG.save.data.downscroll))
 				{
 					if (daNote.tooLate || !daNote.wasGoodHit)
 					{
