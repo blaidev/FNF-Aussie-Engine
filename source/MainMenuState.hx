@@ -27,9 +27,9 @@ class MainMenuState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['story mode', 'freeplay', 'options'];
+	var optionShit:Array<String> = ['story mode', 'options'];
 	#else
-	var optionShit:Array<String> = ['story mode', 'freeplay'];
+	var optionShit:Array<String> = ['story mode', 'options', 'donate'];
 	#end
 
 	var newGaming:FlxText;
@@ -39,7 +39,7 @@ class MainMenuState extends MusicBeatState
 	
 
 	
-	public static var gameVer:String = "0.2.8.0 Port";
+	public static var gameVer:String = "FNF - 0.2.8.0 Aussie Engine - 0.0.2.0";
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
@@ -195,9 +195,9 @@ class MainMenuState extends MusicBeatState
 										FlxG.switchState(new StoryMenuState());
 										trace("Story Menu Selected");
 									case 'freeplay':
-										FlxG.switchState(new AchievementsMenuState());
+										FlxG.switchState(new MainMenuState());
 
-										trace("Achivements not dumb ol freeplay");
+										trace("Takes you back if it is loaded.");
 
 									case 'options':
 										FlxG.switchState(new OptionsMenu());
